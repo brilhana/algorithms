@@ -1,6 +1,6 @@
 // Author: Alexandre Brilhante
 
-/* Returns the approximation of Pi. */
+/* Returns an approximation of Pi. */
 
 var approx = function() {
   var n = 20000;

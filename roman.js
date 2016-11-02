@@ -3,14 +3,14 @@
 /* Returns an integer in Roman numeral representation. */
 
 var roman = function (n) {
-  return number(n, 1000, "M", "?", "?") +
+  return number(n, 1000, "M", "", "") +
          number(n, 100, "C", "D", "M") +
          number(n, 10, "X", "L", "C") +
          number(n, 1, "I", "V", "X");
 };
 
-var number = function (n, digit, one, five, ten) {
-  var c = Math.floor(n/digit) % 10;
+var number = function (n, base, one, five, ten) {
+  var c = Math.floor(n / base) % 10;
   if (c < 4) {
     return repeat(c, one);
   }
@@ -18,7 +18,7 @@ var number = function (n, digit, one, five, ten) {
     return one + five;
   }
   else if (c < 9) {
-    return five + repeat(c-5, one);
+    return five + repeat(c - 5, one);
   }
   else {
     return one + ten;
@@ -34,12 +34,12 @@ var repeat = function (n, value) {
 };
 
 var test = function () {
-    assert(repeat(0,"I") == "");
-    assert(repeat(3,"I") == "III");
+    assert(repeat(0, "I") == "");
+    assert(repeat(3, "I") == "III");
     assert(number(439, 1, "I", "V", "X") == "IX");
     assert(number(439, 10, "X", "L", "C") == "XXX");
     assert(number(439, 100, "C", "D", "M") == "CD");
-    assert(number(439, 1000, "M", "?", "?") == "");
+    assert(number(439, 1000, "M", "", "") == "");
     assert(roman(1) == "I");
     assert(roman(3) == "III");
     assert(roman(4) == "IV");
