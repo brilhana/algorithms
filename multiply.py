@@ -22,4 +22,4 @@ def multiply(u, v):
         s = len(str(u)) // 2
         w, x = u // (10**s), u % (10**s)
         y, z = v // (10**s), v % (10**s)
-        return add(mult(w, y) * (10**(2*s)), add(mult(w, z), add(mult(x, y) * (10**s), mult(x, z))))
+        return add(multiply(w, y) * (10**(2*s)), add(multiply(w, z), add(multiply(x, y) * (10**s), multiply(x, z))))
