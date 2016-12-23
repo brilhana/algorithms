@@ -1,6 +1,6 @@
 // Author: Alexandre Brilhante
 
-/* Return true if s is a palindrome. */
+/* Returns true if the argument is a palindrome. */
 
 object Palindrome {
   def main(args: Array[String]) {

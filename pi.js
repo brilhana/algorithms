@@ -3,7 +3,7 @@
 /* Returns an approximation of Pi. */
 
 var approx = function() {
-  var n = 20000;
+  var n  = 20000;
   var pi = 0;
   for (var i = 0; i < n; i++) {
     var temp = 4 / (i*2+1);
